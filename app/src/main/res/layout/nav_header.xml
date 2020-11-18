@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/estilo_menubar"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp"
+    android:layout_marginBottom="-40dp">
+    
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_centerVertical="true"
+        android:id="@+id/imageView"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageView"
+        android:id="@+id/name"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:text="Control de Fechas"
+        android:textColor="#fff"
+        android:textSize="14sp"
+        android:fontFamily="@font/nunito_semibold"/>
+
+</RelativeLayout>

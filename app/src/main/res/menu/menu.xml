@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="HOME" />
+    </group>
+
+
+    <item android:title="Alertas">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/fragmento_alerta"
+                    android:icon="@drawable/ic_baseline_add_alarm_24"
+                    android:title="Activos" />
+                <item
+                    android:id="@+id/fragmento_retirado"
+                    android:icon="@drawable/ic_baseline_alarm_off_24"
+                    android:title="Retirados" />
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="Productos">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/fragmento_producto"
+                    android:icon="@drawable/ic_baseline_shopping"
+                    android:title="Productos" />
+                <item
+                    android:id="@+id/fragmento_marca"
+                    android:icon="@drawable/ic_baseline_local_marca"
+                    android:title="Marcas" />
+                <item
+                    android:id="@+id/fragmento_categoria"
+                    android:icon="@drawable/ic_baseline_categoria_24"
+                    android:title="Categorias" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="Acerca de">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_slideshow"
+                    android:icon="@drawable/ic_baseline_info_24"
+                    android:title="Información" />
+            </group>
+        </menu>
+    </item>
+</menu>

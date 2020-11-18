@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.idat.appgfv.UI.Home_fragment"
+        android:label="HOME"
+        tools:layout="@layout/fragment_home_fragment" />
+
+    <fragment
+        android:id="@+id/fragmento_retirado"
+        android:name="com.idat.appgfv.UI.Retirado_fragment"
+        android:label="Retirado"
+        tools:layout="@layout/fragment_retirado_fragment" />
+    <fragment
+        android:id="@+id/fragmento_alerta"
+        android:name="com.idat.appgfv.UI.Alerta_fragment"
+        android:label="Alertas"
+        tools:layout="@layout/fragment_alerta_fragment" />
+    <fragment
+        android:id="@+id/fragmento_marca"
+        android:name="com.idat.appgfv.UI.Marca_fragment"
+        android:label="Marcas"
+        tools:layout="@layout/fragment_marca_fragment" />
+</navigation>
