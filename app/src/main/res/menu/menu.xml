@@ -41,7 +41,11 @@
                 <item
                     android:id="@+id/fragmento_categoria"
                     android:icon="@drawable/ic_baseline_categoria_24"
-                    android:title="Categorias" />
+                    android:title="Categorías" />
+                <item
+                    android:id="@+id/fragmento_area"
+                    android:icon="@drawable/ic_baseline_area_24"
+                    android:title="Áreas" />
             </group>
         </menu>
     </item>

@@ -10,7 +10,6 @@
         android:name="com.idat.appgfv.UI.Home_fragment"
         android:label="HOME"
         tools:layout="@layout/fragment_home_fragment" />
-
     <fragment
         android:id="@+id/fragmento_retirado"
         android:name="com.idat.appgfv.UI.Retirado_fragment"
@@ -26,4 +25,14 @@
         android:name="com.idat.appgfv.UI.Marca_fragment"
         android:label="Marcas"
         tools:layout="@layout/fragment_marca_fragment" />
+    <fragment
+        android:id="@+id/fragmento_area"
+        android:name="com.idat.appgfv.UI.Area_fragment"
+        android:label="Áreas"
+        tools:layout="@layout/fragment_area_fragment" />
+    <fragment
+        android:id="@+id/fragmento_categoria"
+        android:name="com.idat.appgfv.UI.Categoria_fragment"
+        android:label="Categorías"
+        tools:layout="@layout/fragment_categoria_fragment" />
 </navigation>

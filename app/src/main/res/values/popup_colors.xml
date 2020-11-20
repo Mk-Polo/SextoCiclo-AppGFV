@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="backgorund1">#2e2e38</color>
+    <color name="green">#38c96d</color>
+    <color name="red">#eb4b4b</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="ambar">#D1A72A</color>
+    <color name="white">#fff</color>
+
+    <color name="backgorund_pop">#f7f7f7</color>
+    <color name="text">#a3a3a3</color>
+</resources>
