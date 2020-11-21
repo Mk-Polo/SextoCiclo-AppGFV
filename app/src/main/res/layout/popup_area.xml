@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tituloMarca"
+            android:id="@+id/tituloArea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -31,7 +32,7 @@
     </RelativeLayout>
 
     <EditText
-        android:id="@+id/txtMarca"
+        android:id="@+id/txtArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -42,7 +43,7 @@
         android:layout_marginBottom="96dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Ingresar marca"
+        android:hint="Ingresar area"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <Button
-        android:id="@+id/submitMarca"
+        android:id="@+id/submitArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="114dp"
@@ -68,11 +69,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMarca"
+        app:layout_constraintTop_toBottomOf="@+id/txtArea"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/closeMarca"
+        android:id="@+id/closeArea"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="8dp"

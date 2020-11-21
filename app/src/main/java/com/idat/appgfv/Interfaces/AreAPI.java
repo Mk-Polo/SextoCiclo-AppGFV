@@ -1,5 +1,6 @@
 package com.idat.appgfv.Interfaces;
 
+import com.idat.appgfv.Modelo.Marca.Area;
 import com.idat.appgfv.Modelo.Marca.Marca;
 
 import java.util.List;
@@ -13,17 +14,17 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
-public interface MarcaAPI {
+public interface AreAPI {
 
     @GET("all")
-    Call<List<Marca>> listar();
+    Call<List<Area>> listar();
 
     @POST("save")
-    Call<ResponseBody> guardar(@Body Marca marca);
-    
+    Call<ResponseBody> guardar(@Body Area area);
+
     @PUT("editar")
-    Call<ResponseBody> editar(@Body Marca marca);
-    
+    Call<ResponseBody> editar(@Body Area area);
+
     @DELETE("delete/{id}")
-    Call<ResponseBody> eliminar(@Path("id") Long id );
+    Call<ResponseBody> eliminar(@Path("id") Long id);
 }
