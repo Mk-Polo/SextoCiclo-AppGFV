@@ -2,7 +2,7 @@ package com.idat.appgfv.UI;
 
 import android.app.Dialog;
 import android.os.Bundle;
-import androidx.appcompat.app.AlertDialog;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,11 +19,8 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.idat.appgfv.Adaptador.AreaAdapter;
-import com.idat.appgfv.Adaptador.MarcaAdapter;
 import com.idat.appgfv.Interfaces.ApiArea;
-import com.idat.appgfv.Interfaces.ApiMarca;
-import com.idat.appgfv.Modelo.Marca.Area;
-import com.idat.appgfv.Modelo.Marca.Marca;
+import com.idat.appgfv.Modelo.Categoria.Area;
 import com.idat.appgfv.R;
 
 import java.io.IOException;
