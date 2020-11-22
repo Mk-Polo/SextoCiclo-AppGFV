@@ -174,7 +174,7 @@ public class Categoria_fragment extends Fragment implements SwipeRefreshLayout.O
 
         @Override
         public void onFailure(Call<List<Categoria>> call, Throwable t) {
-                 Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
         }
     });
     }
