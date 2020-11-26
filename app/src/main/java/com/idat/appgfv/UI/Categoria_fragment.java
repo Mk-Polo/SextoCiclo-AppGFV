@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.idat.appgfv.Adaptador.CategoriaAdapter;
-import com.idat.appgfv.Interfaces.ApiCategoria;
-import com.idat.appgfv.Modelo.Marca.Categoria;
+import com.idat.appgfv.Interfaces.Categoria.ApiCategoria;
+import com.idat.appgfv.Modelo.Categoria.Categoria;
 import com.idat.appgfv.R;
 
 import java.io.IOException;
@@ -31,8 +31,6 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Categoria_fragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
@@ -174,7 +172,7 @@ public class Categoria_fragment extends Fragment implements SwipeRefreshLayout.O
 
         @Override
         public void onFailure(Call<List<Categoria>> call, Throwable t) {
-                 Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            //     Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
         }
     });
     }

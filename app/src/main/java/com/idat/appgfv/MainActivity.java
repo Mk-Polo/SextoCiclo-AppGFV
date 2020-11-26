@@ -26,23 +26,24 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     DrawerLayout drawerLayout;
-    ActionBarDrawerToggle toggle;
+    /*ActionBarDrawerToggle toggle;
     Toolbar toolbar;
-    NavigationView navigationView;
+    NavigationView navigationView;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        drawerLayout = findViewById(R.id.drawer);
-        toolbar = findViewById(R.id.toolBar);
+        DrawerLayout drawerLayout = findViewById(R.id.drawer);
+        Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
-        toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
+        /*toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView = findViewById(R.id.nav_view);
+        toggle.syncState();*/
+        NavigationView navigationView = findViewById(R.id.nav_view);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home , R.id.fragmento_alerta, R.id.fragmento_retirado, R.id.fragmento_marca, R.id.fragmento_area, R.id.fragmento_categoria)
+                R.id.nav_home , R.id.fragmento_alerta, R.id.fragmento_retirado, R.id.fragmento_marca,
+                R.id.fragmento_area, R.id.fragmento_categoria, R.id.fragmento_producto)
                 .setDrawerLayout(drawerLayout)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.idat.appgfv.Adaptador.AreaAdapter;
-import com.idat.appgfv.Interfaces.ApiArea;
-import com.idat.appgfv.Modelo.Categoria.Area;
+import com.idat.appgfv.Interfaces.Area.ApiArea;
+import com.idat.appgfv.Modelo.Area.Area;
 import com.idat.appgfv.R;
 
 import java.io.IOException;
@@ -180,7 +180,7 @@ public class Area_fragment extends Fragment implements SwipeRefreshLayout.OnRefr
 
             @Override
             public void onFailure(Call<List<Area>> call, Throwable t) {
-                Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

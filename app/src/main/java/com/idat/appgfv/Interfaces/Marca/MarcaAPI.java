@@ -1,4 +1,4 @@
-package com.idat.appgfv.Interfaces;
+package com.idat.appgfv.Interfaces.Marca;
 
 import com.idat.appgfv.Modelo.Marca.Marca;
 

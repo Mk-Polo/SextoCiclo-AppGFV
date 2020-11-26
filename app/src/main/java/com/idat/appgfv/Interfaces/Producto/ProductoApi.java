@@ -1,6 +1,6 @@
-package com.idat.appgfv.Interfaces;
+package com.idat.appgfv.Interfaces.Producto;
 
-import com.idat.appgfv.Modelo.Categoria.Area;
+import com.idat.appgfv.Modelo.Producto.Producto;
 
 import java.util.List;
 
@@ -13,16 +13,16 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
-public interface AreAPI {
+public interface ProductoApi {
 
     @GET("all")
-    Call<List<Area>> listar();
+    Call<List<Producto>> listar();
 
     @POST("save")
-    Call<ResponseBody> guardar(@Body Area area);
+    Call<ResponseBody> guardar(@Body Producto producto);
 
     @PUT("editar")
-    Call<ResponseBody> editar(@Body Area area);
+    Call<ResponseBody> editar(@Body Producto producto);
 
     @DELETE("delete/{id}")
     Call<ResponseBody> eliminar(@Path("id") Long id);

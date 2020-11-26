@@ -1,6 +1,6 @@
-package com.idat.appgfv.Interfaces;
+package com.idat.appgfv.Interfaces.Categoria;
 
-import com.idat.appgfv.Modelo.Marca.Categoria;
+import com.idat.appgfv.Modelo.Categoria.Categoria;
 
 import java.util.List;
 

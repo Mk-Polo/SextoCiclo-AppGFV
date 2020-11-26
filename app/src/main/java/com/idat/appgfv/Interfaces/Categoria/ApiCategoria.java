@@ -1,4 +1,4 @@
-package com.idat.appgfv.Interfaces;
+package com.idat.appgfv.Interfaces.Categoria;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

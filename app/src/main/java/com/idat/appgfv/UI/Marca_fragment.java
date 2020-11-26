@@ -11,6 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,8 +20,7 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.idat.appgfv.Adaptador.MarcaAdapter;
-import com.idat.appgfv.Interfaces.ApiMarca;
-import com.idat.appgfv.Interfaces.MarcaAPI;
+import com.idat.appgfv.Interfaces.Marca.ApiMarca;
 import com.idat.appgfv.Modelo.Marca.Marca;
 import com.idat.appgfv.R;
 
@@ -32,8 +32,6 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Marca_fragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
     
@@ -101,10 +99,13 @@ public class Marca_fragment extends Fragment implements SwipeRefreshLayout.OnRef
 
         txtMarca = dialog.findViewById(R.id.txtMarca);
         submitMarca = dialog.findViewById(R.id.submitMarca);
-        
+
         submitMarca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
                 //Validacion de campos vacíos
                 if(txtMarca.getText().toString().trim().equals("")){
                     txtMarca.setError("Dato obligatorio");
@@ -176,7 +177,7 @@ public class Marca_fragment extends Fragment implements SwipeRefreshLayout.OnRef
 
             @Override
             public void onFailure(Call<List<Marca>> call, Throwable t) {
-                Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(getContext(), "No se puede listar", Toast.LENGTH_SHORT).show();
             }
         });
     }

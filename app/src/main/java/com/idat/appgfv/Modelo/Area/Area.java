@@ -1,4 +1,4 @@
-package com.idat.appgfv.Modelo.Categoria;
+package com.idat.appgfv.Modelo.Area;
 
 public class Area {
     private Long id;

@@ -1,12 +1,11 @@
-package com.idat.appgfv.Interfaces;
+package com.idat.appgfv.Interfaces.Area;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiMarca {
-
+public class ApiArea {
     public static Retrofit getRetrofit(){
-        String url = "http://192.168.1.60:9001/api/marcas/";
+        String url = "http://192.168.1.60:9001/api/area/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -15,8 +14,9 @@ public class ApiMarca {
         return retrofit;
     }
 
-    public static MarcaAPI getMarcaApi(){
-        MarcaAPI marcaApi = getRetrofit().create(MarcaAPI.class);
-        return marcaApi;
+    public static AreAPI getAreaApi(){
+        AreAPI areaApi = getRetrofit().create(AreAPI.class);
+        return areaApi;
     }
+
 }

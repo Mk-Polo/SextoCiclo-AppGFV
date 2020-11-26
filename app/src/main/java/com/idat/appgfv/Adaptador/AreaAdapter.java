@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.idat.appgfv.Modelo.Categoria.Area;
+import com.idat.appgfv.Modelo.Area.Area;
 
 import com.idat.appgfv.R;
 

@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.idat.appgfv.Modelo.Marca.Categoria;
+import com.idat.appgfv.Modelo.Categoria.Categoria;
 import com.idat.appgfv.R;
 
 import java.util.List;
