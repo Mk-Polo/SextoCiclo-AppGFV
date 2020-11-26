@@ -35,4 +35,9 @@
         android:name="com.idat.appgfv.UI.Categoria_fragment"
         android:label="Categorías"
         tools:layout="@layout/fragment_categoria_fragment" />
+    <fragment
+        android:id="@+id/fragmento_producto"
+        android:name="com.idat.appgfv.UI.ProductoFragment"
+        android:label="Producto"
+        tools:layout="@layout/fragment_producto_fragment" />
 </navigation>

@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
         navigationView = findViewById(R.id.nav_view);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home , R.id.fragmento_alerta, R.id.fragmento_retirado, R.id.fragmento_marca, R.id.fragmento_area, R.id.fragmento_categoria)
+                R.id.nav_home , R.id.fragmento_alerta, R.id.fragmento_retirado, R.id.fragmento_marca, R.id.fragmento_area,
+                R.id.fragmento_categoria, R.id.fragmento_producto)
                 .setDrawerLayout(drawerLayout)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
