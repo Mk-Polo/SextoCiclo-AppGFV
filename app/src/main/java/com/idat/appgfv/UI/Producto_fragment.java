@@ -1,13 +1,17 @@
 package com.idat.appgfv.UI;
 
+import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +23,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.idat.appgfv.Adaptador.ProductoAdapter;
+import com.idat.appgfv.Interfaces.Area.ApiArea;
+import com.idat.appgfv.Interfaces.Categoria.ApiCategoria;
 import com.idat.appgfv.Interfaces.Marca.ApiMarca;
 import com.idat.appgfv.Interfaces.Producto.ApiProducto;
 import com.idat.appgfv.Modelo.Area.Area;
@@ -30,6 +38,7 @@ import com.idat.appgfv.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,6 +58,11 @@ public class Producto_fragment extends Fragment implements SwipeRefreshLayout.On
     private List<Categoria> categoriaSpinner;
     private List<Marca> marcaSpinner;
     private List<String> comboMarca = new ArrayList<>();
+    private List<String> comboCategoria = new ArrayList<>();
+    private List<String> comboArea = new ArrayList<>();
+
+    //Scanner
+    private EditText txtBarras;
 
     public Producto_fragment() {
         // Required empty public constructor
@@ -113,9 +127,57 @@ public class Producto_fragment extends Fragment implements SwipeRefreshLayout.On
     }
 
     private void consultarSpinnerCategoria() {
+        categoriaSpinner = new ArrayList<>();
+        Call<List<Categoria>> callCategoria = ApiCategoria.getCategoriaApi().listar();
+        callCategoria.enqueue(new Callback<List<Categoria>>() {
+            @Override
+            public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
+                if(!response.isSuccessful()){
+                    Toast.makeText(getContext(), "Codigo: " + response.code(), Toast.LENGTH_SHORT).show();
+                }
+
+                categoriaSpinner = response.body();
+                mostrarListaCategoria();
+            }
+
+            @Override
+            public void onFailure(Call<List<Categoria>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void mostrarListaCategoria() {
+        for(int i = 0; i < categoriaSpinner.size(); i++){
+            comboCategoria.add(categoriaSpinner.get(i).getCategoria());
+        }
     }
 
     private void consultarSpinnerArea() {
+        areaSpinner = new ArrayList<>();
+        Call<List<Area>> callArea = ApiArea.getAreaApi().listar();
+        callArea.enqueue(new Callback<List<Area>>() {
+            @Override
+            public void onResponse(Call<List<Area>> call, Response<List<Area>> response) {
+                if(!response.isSuccessful()){
+                    Toast.makeText(getContext(), "Codigo: " + response.code(), Toast.LENGTH_SHORT).show();
+                }
+
+                areaSpinner = response.body();
+                mostrarListaArea();
+            }
+
+            @Override
+            public void onFailure(Call<List<Area>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void mostrarListaArea() {
+        for(int i = 0; i < areaSpinner.size(); i++ ){
+            comboArea.add(areaSpinner.get(i).getArea());
+        }
     }
 
     private void getData() {
@@ -175,6 +237,44 @@ public class Producto_fragment extends Fragment implements SwipeRefreshLayout.On
 
         ArrayAdapter<CharSequence> adaptadorSpnMarcas = new ArrayAdapter(getContext(),R.layout.support_simple_spinner_dropdown_item, comboMarca);
         spnMarcas.setAdapter(adaptadorSpnMarcas);
+
+        ArrayAdapter<CharSequence> adaptadorSpnCategorias = new ArrayAdapter(getContext(),R.layout.support_simple_spinner_dropdown_item, comboCategoria);
+        spnCategorias.setAdapter(adaptadorSpnCategorias);
+
+        ArrayAdapter<CharSequence> adaptadorSpnAreas = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, comboArea);
+        spnAreas.setAdapter(adaptadorSpnAreas);
+        
+        btnBarra = dialog.findViewById(R.id.btnEscanearBarra);
+        txtBarras = dialog.findViewById(R.id.txtBarra);
+        btnBarra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                escanearCodigo();
+            }
+        });
+    }
+
+    private void escanearCodigo() {
+        IntentIntegrator.forSupportFragment(Producto_fragment.this)
+                .setCaptureActivity(CaptureAct.class)
+                .setOrientationLocked(false)
+                .setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
+                .setPrompt("Escaneando código")
+                .initiateScan();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        IntentResult result =IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case IntentIntegrator.REQUEST_CODE:
+                if(resultCode == Activity.RESULT_OK){
+                    txtBarras.setText(result.getContents());
+                }else {
+                    Toast.makeText(getContext(), "Cancelaste el escáner", Toast.LENGTH_SHORT).show();
+                }
+        }
     }
 
     @Override

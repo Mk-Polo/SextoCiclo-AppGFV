@@ -10,7 +10,7 @@ public class Producto {
     private Categoria categoria;
     private Marca marca;
     private String producto;
-    private Long barra;
+    private String barra;
     private String peso;
     private int dias;
     private String imagen;
@@ -18,7 +18,7 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(Long id, Area area, Categoria categoria, Marca marca, String producto, Long barra, String peso, int dias, String imagen) {
+    public Producto(Long id, Area area, Categoria categoria, Marca marca, String producto, String barra, String peso, int dias, String imagen) {
         this.id = id;
         this.area = area;
         this.categoria = categoria;
@@ -70,11 +70,11 @@ public class Producto {
         this.producto = producto;
     }
 
-    public Long getBarra() {
+    public String getBarra() {
         return barra;
     }
 
-    public void setBarra(Long barra) {
+    public void setBarra(String barra) {
         this.barra = barra;
     }
 
